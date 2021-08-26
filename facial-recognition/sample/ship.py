@@ -12,6 +12,7 @@ import os
 from explosion import Explosion
 from heart import Heart
 
+
 class Ship(Entity):
 
     def __init__(self, ship, position=(800, 900), velocity=6):
@@ -21,7 +22,10 @@ class Ship(Entity):
         self.hearts = []
         position = (128, 64)
         for i in range(3):
-            self.hearts.append(Heart('assets/make_tileset/hearth.png', (position)))
+            self.hearts.append(
+                Heart(
+                    'assets/make_tileset/hearth.png',
+                    (position)))
             position = (position[0] + 64, position[1])
 
     def move(self, screen):
@@ -65,11 +69,10 @@ class Ship(Entity):
                         objs.remove(obj)
             for shield in shields:
                 if laser.collision(shield):
-                        try:
-                            self.lasers.remove(laser)
-                        except BaseException:
-                            print("exeption catched")
-
+                    try:
+                        self.lasers.remove(laser)
+                    except BaseException:
+                        print("exeption catched")
 
     def ship_collisions(self, objs):
         for obj in objs:

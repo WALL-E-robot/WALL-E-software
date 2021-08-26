@@ -1,13 +1,13 @@
 from item import Item
 import pygame
 
+
 class Shield(Item):
 
     def __init__(self, img_shield, pos):
         super().__init__(img_shield, pos)
         # self.health = 30
         # self.max_health = 30
-
 
     def shield_bar(self, window):
         pygame.draw.rect(

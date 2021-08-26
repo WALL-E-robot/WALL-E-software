@@ -23,7 +23,7 @@ class Level():
         for y in range(17):
             for x in range(30):
                 props = self.tmxdata.get_tile_properties(x, y, 0)
-                if props != None:
+                if props is not None:
                     position = (x * 64, y * 64)
                     img = f"assets/{props['source']}"
                     id = props['id']
@@ -43,10 +43,12 @@ class Level():
                         self.level_bar = LevelBar(img, position)
                     else:
                         print(
-                            f"{Color.ERROR} [ERROR]: Unknown id. You should check the map", flush=True)
+                            f"{Color.ERROR} [ERROR]: Unknown id. You should check the map",
+                            flush=True)
                 else:
                     print(
-                        f"{Color.WARNING} [WARING]: No pygame.Surface at this position", flush=True)
+                        f"{Color.WARNING} [WARING]: No pygame.Surface at this position",
+                        flush=True)
                 x += 1
             x = 0
             y += 1
