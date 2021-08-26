@@ -4,6 +4,7 @@ Provides some arithmetic functions
 
 import unittest
 
+
 class WorlTestCase(unittest.TestCase):
 
     def __init__():

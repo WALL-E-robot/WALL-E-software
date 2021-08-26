@@ -67,10 +67,11 @@ class Item():
             return True
         else:
             return False
+
     def set_damage(self, damage=1):
         if self.health - damage >= 0:
             self.health -= damage
-    
+
     def get_health(self):
         return self.health
 

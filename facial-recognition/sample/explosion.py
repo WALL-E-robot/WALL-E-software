@@ -1,5 +1,6 @@
 import pygame
 
+
 class Explosion(pygame.sprite.Sprite):
     def __init__(self, center, size):
         pygame.sprite.Sprite.__init__(self)
@@ -8,7 +9,7 @@ class Explosion(pygame.sprite.Sprite):
         for i in range(9):
             filename = 'explosion_{}.png'.format(i)
             img = pygame.image.load(f'assets/explosion/{filename}').convert()
-            img.set_colorkey((0,0,0))
+            img.set_colorkey((0, 0, 0))
             # img_lg = pygame.transform.scale(img, (75, 75))
             self.explosions.append(img)
             # img_sm = pygame.transform.scale(img, (32, 32))
@@ -26,9 +27,11 @@ class Explosion(pygame.sprite.Sprite):
     def update(self, screen):
         explosion_speed = 8
         self.counter += 1
-        if self.counter >= explosion_speed and self.index < len(self.explosions) - 1:
+        if self.counter >= explosion_speed and self.index < len(
+                self.explosions) - 1:
             self.counter = 0
             self.index += 1
             screen.blit(self.explosions[self.index], self.rect.center)
-        if self.index >= len(self.explosions) - 1 and self.counter >= explosion_speed:
+        if self.index >= len(self.explosions) - \
+                1 and self.counter >= explosion_speed:
             self.kill()

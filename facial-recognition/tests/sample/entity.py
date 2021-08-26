@@ -9,6 +9,7 @@ from item import Item
 import pygame
 from laser import Laser
 
+
 class Entity(Item):
     """
         The class will contain all methods for all kind of entities.
@@ -23,13 +24,12 @@ class Entity(Item):
         self.COOLDOWN = 30
         self.cool_down_counter = 0
 
-
     def get_damages(self, damage):
         self.lives -= damage
         if is_alive() == False:
             self.lives = 0
 
-    def set_velocity(self, vel = 0.3):
+    def set_velocity(self, vel=0.3):
         self.velocity = vel
 
     def is_alive(self):
